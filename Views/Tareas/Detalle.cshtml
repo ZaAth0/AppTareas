@@ -1,0 +1,8 @@
+﻿@model AppTareas.Models.Tarea
+<h1>@Model.Titulo</h1>
+<p>@Model.Descripcion</p>
+<p>Estado @(Model.EstaCompletado ? "Completado"  : "Pendiente")</p>
+<a href="@Url.Action("Index")">Volver</a> 
+
+
+<!--Action puede pasar 8 sobrecargas-->

@@ -1,0 +1,35 @@
+﻿@model AppTareas.Models.Tarea
+<h1 >Crear nueva tarea</h1>
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in
+           ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+<form asp-action="Crear" method="post" style="margin-top: 20px;">
+    <div>
+        <label asp-for="Titulo" class="form-label"></label>
+        <input type="text" asp-for="Titulo" class="form-control"/>
+        <br/>
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label asp-for="Descripcion" style="font-weight: bold;">Descripción:</label>
+        <br />
+
+        <textarea asp-for="Descripcion" style="width: 400px; height: 100px;"></textarea>
+        <span asp-validation-for="Descripcion" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="EstaCompletado" style="font-weight: bold;">Completado:</label>
+        <input type="checkbox" asp-for="EstaCompletado">
+    </div>
+    <button type="submit" class="Crearbtn">Crear</button>
+</form>
+<a href="@Url.Action("Index")" style="display: block; margin-top: 10px;">Volver</a>

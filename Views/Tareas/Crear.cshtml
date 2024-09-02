@@ -1,0 +1,17 @@
+﻿@model AppTareas.Models.Tarea
+<h1>Crear nueva Tarea</h1>
+<form asp-action="Create" method="post">
+<div>
+<label
+asp-for="Titulo"></label>
+<input asp-for="Titulo" />
+</div>
+<div>
+<label asp-for="Descripcion"></label> <textarea asp-for="Descripcion"></textarea>
+</div>
+<div>
+<label asp-for="EstaCompletado"></label>
+        <input type="checkbox" asp-for="EstaCompletado" />
+</div>
+<button type="submit">Crear</button> </form>
+<a href="@Url.Action("Index")">Volver</a>
