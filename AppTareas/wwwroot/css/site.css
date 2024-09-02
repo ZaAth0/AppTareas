@@ -10,7 +10,7 @@ html {
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-    transition: .7s;
+    transition: 0.7s;
 }
 .btn {
     border-radius: 60px;
@@ -24,7 +24,8 @@ html {
 
     .btn:hover {
         color: white;
-        backround: #3852bd transform: scale(1.05);
+        background: #3852bd; 
+        transform: scale(1.05);
         border-radius: 60PX;
     }
 
@@ -63,7 +64,7 @@ h2 {
 }
     .Crearbtn:hover {
         color: white;
-        background: #8d00d4;
+        background: #3852bd;
         transform: scale(1.05);
         border-radius: 60PX;
     }

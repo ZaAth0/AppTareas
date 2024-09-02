@@ -1,4 +1,5 @@
-﻿@model IEnumerable<AppTareas.Models.Tarea>
+﻿@using AppTareas.Helpers
+@model IEnumerable<AppTareas.Models.Tarea>
 
 @{
     ViewData["Title"] = "Lista de Tareas";
@@ -14,7 +15,7 @@
     <link href="https://cdn.datatables.net/fixedheader/3.2.2/css/fixedHeader.dataTables.min.css" rel="stylesheet" />
  }
     <h1>Listado de tareas</h1>
-    <p><a asp-action="Crear" class="btn btn-outline-info">Crear nueva tarea</a></p>
+<p><a asp-action="Crear" class="btn btn-outline-info"><i class="fa-solid fa-plus fa-beat" style="color:white;"></i>Crear nueva tarea</a></p>
 
 <table class="table" id="tb_tareas">
     <thead>
@@ -59,15 +60,17 @@
                              }
                              )
                              
-                              @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id },
-                              new{
+                    @Html.ActionLinkWithIcon("Eliminar", "Eliminar", "Tareas","fa-solid fa-trash",new { id = item.Id },
+                             new
+                             {
                                  @class = "btn btn-danger",
-                             id = "eliminar-link",
-                             title = "Eliminar Tarea",
-                             data_toggle = "Accion para eliminar registro",
+                                 id = "eliminar-link",
+                                 title = "Eliminar Tarea",
+                                 data_toggle = "Accion para eliminar registro",
                                  onclick = "return confirm('¿Estas seguro de continuar?');"
                              }
                              )
+
                 </td>
                 </tr>
             }
