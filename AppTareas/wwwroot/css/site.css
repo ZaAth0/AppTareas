@@ -68,7 +68,34 @@ h2 {
         transform: scale(1.05);
         border-radius: 60PX;
     }
-.navbar-brand:hover{
+
+.btn-secondary{
+    border-radius: 60px;
+    width: 100px;
+    background: #0060d4;
+    color: white;
+    margin-top: 10px;
+    padding: 8px;
+    border: none;
+}
+.btn-danger {
+    color: white; 
+    border-radius: 60px;
+    width: 100px;
+    background: #0060d4;
+    color: white;
+    margin-top: 10px;
+    padding: 8px;
+    border: none;
+}
+.btn-danger:hover{
+    color:black;
+    font-weight: 500;
+    background: red;
+    transform: scale(2);
+    border-radius: 60px;
+}
+.navbar-brand:hover {
     transform: scale(1.05);
 }
 .nav-item:hover {

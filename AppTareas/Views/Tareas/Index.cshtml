@@ -37,26 +37,30 @@
                 <td>@item.Descripcion</td>
                 <td><input type="checkbox" @(item.EstaCompletado ? "checked" : "") disabled /></td>
                 <td>
-                    @Html.ActionLink("Detalle", "Detalle", new { id = item.Id },
+                    @Html.ActionLinkWithIcon("Detalle", "Detalle", "Tarea","fa-solid fa-info", new { id = item.Id },
                     new
                     {
                               @class = "btn btn-info",
                               id = "btnDetalle" + item.Id, //Id unico de cada enlace
-                              data_toggle = "modal", //Atributo para activar el modal enn Bootstra
+                              data_toggle = "modal", //Atributo para activar el modal en Bootstrap
                               data_target= "#confirmModal",//ID del modal a mostrar
                               data_url = Url.Action("Detalle", new {id = item.Id}),
                               data_message = "¿Estás seguro de que deseas ver el detalle de este item?"
                     }
 
                     )
-                    @Html.ActionLink("Editar", "Editar", new { id = item.Id },
+                    @Html.ActionLinkWithIcon("Editar", "Editar", "Tareas","fa-solid fa-pen", new { id = item.Id },
                    
                         new {
                             @class = "btn btn-secondary",
                             id = "eliminar-link"+item.Id,
                             title = "Editar Tarea",
-                            data_toggle = "Accion para eliminar registro",
-                            onclick = "return confirmarAccion()"
+                            //data_toggle = "Accion para eliminar registro",
+                            data_toggle="modal",
+
+                            data_message = "¿Estás seguro de que deseas ver el editar este item?"
+
+                            //onclick = "return confirmarAccion()"
                              }
                              )
                              
@@ -67,7 +71,10 @@
                                  id = "eliminar-link",
                                  title = "Eliminar Tarea",
                                  data_toggle = "Accion para eliminar registro",
-                                 onclick = "return confirm('¿Estas seguro de continuar?');"
+                                 data_message = "¿Estás seguro de que deseas ver el eliminar este item?"
+
+
+                                // onclick = "return confirm('¿Estas seguro de continuar?');"
                              }
                              )
 
@@ -146,10 +153,10 @@
         });
     });
    // alert("Mensaje desde JAVASCRIPT");
-    function confirmarAccion(){
+    /*function confirmarAccion(){
         var mensaje = "¿Estás seguro de que deseas continuar?"
         return confirm(mensaje);
-    }  
+    }  */
     </script>
 }
  
