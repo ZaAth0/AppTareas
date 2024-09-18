@@ -1,4 +1,9 @@
 ﻿@model AppTareas.Models.Tarea
+@section Estilos {
+    @*ESTILOS DE SUMMERNOTE*@
+    <link href="~/lib/Summernote/summernote.min.css" rel="stylesheet" />
+
+}
 <h1 >Crear nueva tarea</h1>
 @if (!ViewData.ModelState.IsValid)
 {
@@ -36,5 +41,14 @@
 
         @section Scripts{
     <partial name="_ValidationScriptsPartial" />
+    @*SUMMERNOTE*@
+    <script src="~/lib/Summernote/summernote.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Descripcion").summernote();
+
+        });
+    </script>
         }
        

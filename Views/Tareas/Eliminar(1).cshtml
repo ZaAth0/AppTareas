@@ -1,0 +1,28 @@
+﻿@model AppTareas.Models.Tarea
+<h1 style="font-family: Arial, sans-serif;">Eliminar Tarea</h1>
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in
+           ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<h3>¿Estás seguro de que deseas eliminar esta tarea?</h3>
+<div>
+    <h4>@Model.Titulo</h4>
+    <p>@Model.Descripcion</p>
+</div>
+
+<form asp-action="Eliminar">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+    <a asp-action="Index">Cancelar</a>
+</form>
+
+

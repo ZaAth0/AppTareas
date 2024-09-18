@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\fontawesome\" />
+    <Folder Include="wwwroot\lib\summernote\" />
   </ItemGroup>
 
 </Project>
