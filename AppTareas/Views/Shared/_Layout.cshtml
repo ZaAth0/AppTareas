@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AppTareas.styles.css" asp-append-version="true" />
 
+
     @await RenderSectionAsync("Estilos", required: false) @* Se agrega nueva seccion para agregar estilos en cada vista *@
 </head>
 <body>
@@ -61,7 +62,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <a href="#" class="btn btn-danger" id="modalConfirmBtn">Aceptar</a>
+                    <a href="#" class="btn btn-primary" id="modalConfirmBtn">Aceptar</a>
                 </div>
             </div>
         </div>
